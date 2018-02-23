@@ -20,5 +20,14 @@
   "bugs": {
     "url": "https://github.com/echoscp/some-gayass-login-screen/issues"
   },
-  "homepage": "https://github.com/echoscp/some-gayass-login-screen#readme"
+  "homepage": "https://github.com/echoscp/some-gayass-login-screen#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.2",
+    "cookie-parser": "^1.4.3",
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "morgan": "^1.9.0",
+    "randomstring": "^1.1.5"
+  }
 }
