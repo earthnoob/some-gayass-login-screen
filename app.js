@@ -7,6 +7,12 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const passport = require('passport');
 const LocalStraegy = require('passport-local').Strategy;
+const expressSession = require('express-session')({
+  secret: 'bananarama',
+  resave: false,
+  saveUninitialized: false,
+});
+const Users = require('./models/users');
 
 const index = require('./routes/index');
 const api = require('./routes/api/index');
@@ -27,11 +33,7 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(require('express-session')({
-  secret: 'bananarama',
-  resave: false,
-  saveUninitialized: false
-}));
+app.use(expressSession);
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(express.static(path.join(__dirname, 'public')))
@@ -41,7 +43,6 @@ app.use('/api', api);
 app.use('/api/users', users);
 
 //Configure passport
-const Users = require('./models/users');
 passport.use(new LocalStraegy(Users.authenticate()));
 passport.serializeUser(Users.serializeUser());
 passport.deserializeUser(Users.deserializeUser());
