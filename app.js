@@ -9,14 +9,17 @@ const passport = require('passport');
 const LocalStraegy = require('passport-local').Strategy;
 
 const index = require('./routes/index');
-const users = require('./routes/users');
 const api = require('./routes/api/index');
+const users = require('./routes/api/users');
 
 const app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+
+//Connect to MongoDB database
+mongoose.connect('mongodb://localhost/users');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -34,8 +37,8 @@ app.use(passport.session());
 app.use(express.static(path.join(__dirname, 'public')))
 
 app.use('/', index);
-app.use('/users', users);
 app.use('/api', api);
+app.use('/api/users', users);
 
 //Configure passport
 const Users = require('./models/users');
