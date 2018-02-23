@@ -1,37 +1,17 @@
 {
   "name": "some-gayass-login-screen",
-  "version": "0.0.1",
-  "description": "Just read the readme.md",
-  "main": "app.js",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./bin/www"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/echoscp/some-gayass-login-screen.git"
-  },
-  "keywords": [
-    "stupid",
-    "testing",
-    "bleh"
-  ],
-  "author": "echscp",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/echoscp/some-gayass-login-screen/issues"
-  },
-  "homepage": "https://github.com/echoscp/some-gayass-login-screen#readme",
   "dependencies": {
-    "babel": "^6.23.0",
-    "babel-core": "^6.26.0",
-    "bcryptjs": "^2.4.3",
-    "body-parser": "^1.18.2",
-    "cookie-parser": "^1.4.3",
-    "ejs": "^2.5.7",
-    "express": "^4.16.2",
-    "morgan": "^1.9.0",
-    "randomstring": "^1.1.5",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0"
+    "body-parser": "~1.18.2",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "ejs": "~2.5.7",
+    "express": "~4.15.5",
+    "morgan": "~1.9.0",
+    "serve-favicon": "~2.4.5"
   }
 }
